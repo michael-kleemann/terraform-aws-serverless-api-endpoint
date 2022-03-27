@@ -10,10 +10,6 @@ output "integration" {
   value = aws_api_gateway_integration.integration
 }
 
-output "authorizer" {
-  value = aws_api_gateway_authorizer.authorizer
-}
-
 output "invoke_policy" {
   value = local.has_iam_method_policies ? data.aws_iam_policy_document.invoke_policy[0].json : null
 }
