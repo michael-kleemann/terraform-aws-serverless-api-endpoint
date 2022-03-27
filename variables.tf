@@ -1,8 +1,3 @@
-variable "aws_region" {
-  type = string
-  description = "The region where your resources should be created."
-}
-
 variable "api_name" {
   type        = string
   description = "The name of the rest api where you configure the routes."
