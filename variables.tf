@@ -92,8 +92,7 @@ variable "authorization" {
     )
     authorizer = optional(
       object({
-        arn        = string
-        invoke_arn = string
+        id = string
       })
     )
   })
@@ -115,7 +114,7 @@ variable "authorization" {
 
   validation {
     condition     = var.authorization.auth_type == "CUSTOM" ? var.authorization.authorizer != null : true
-    error_message = "When choosing as authorization type, you also have to specify the authorizer properties."
+    error_message = "When choosing CUSTOM as authorization type, you also have to specify the authorizer properties."
   }
 }
 
