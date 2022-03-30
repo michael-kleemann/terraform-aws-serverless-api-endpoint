@@ -47,6 +47,7 @@ resource "aws_api_gateway_method" "method" {
   resource_id   = local.resource_id
   http_method   = var.http_method
   authorization = var.authorization.auth_type
+  authorizer_id = local.has_authorizer_attached ? var.authorization.authorizer.id : null
 }
 
 resource "aws_api_gateway_integration" "integration" {
