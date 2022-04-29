@@ -1,6 +1,5 @@
 locals {
   lambda_name             = "${var.prefix}${var.name}${var.suffix}"
-  authorizer_name         = "${local.lambda_name}-authorizer"
   resource_id             = var.resource.new_path != null ? aws_api_gateway_resource.resource[0].id : data.aws_api_gateway_resource.resource[0].id
   resource_path           = var.resource.new_path != null ? aws_api_gateway_resource.resource[0].path : data.aws_api_gateway_resource.resource[0].path
   resource_last_path_part = var.resource.new_path != null ? aws_api_gateway_resource.resource[0].path_part : data.aws_api_gateway_resource.resource[0].path_part
