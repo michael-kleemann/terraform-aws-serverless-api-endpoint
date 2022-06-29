@@ -68,3 +68,12 @@ resource "aws_api_gateway_method_settings" "settings" {
     logging_level = var.log_level
   }
 }
+
+resource "aws_lambda_permission" "allow-api-gateway-to-invoke-lambda" {
+  function_name = var.function.function_name
+  statement_id  = "AllowExecutionFromApiGateway"
+  action        = "lambda:InvokeFunction"
+  principal     = "apigateway.amazonaws.com"
+  # execution_arn/stage/method/path
+  source_arn = "${data.aws_api_gateway_rest_api.rest_api.execution_arn}/*/${aws_api_gateway_method.method.http_method}${local.resource_path}"
+}
