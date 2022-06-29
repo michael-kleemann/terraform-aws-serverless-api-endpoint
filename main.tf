@@ -13,7 +13,6 @@ data "aws_iam_policy_document" "invoke_policy" {
   count = local.has_iam_method_policies ? 1 : 0
 
   statement {
-    sid    = var.name
     effect = "Allow"
     principals {
       type        = "*"

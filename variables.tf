@@ -12,23 +12,6 @@ variable "http_method" {
   }
 }
 
-variable "name" {
-  type        = string
-  description = "The name of your operation. This must match the name of the binary."
-}
-
-variable "prefix" {
-  type        = string
-  description = "Adds a prefix to the function name."
-  default     = ""
-}
-
-variable "suffix" {
-  type        = string
-  description = "Adds a suffix to the function name."
-  default     = ""
-}
-
 variable "log_level" {
   type        = string
   description = "Sets the log level of the rest resource in api gateway. Allowed values are OFF, ERROR, INFO."
