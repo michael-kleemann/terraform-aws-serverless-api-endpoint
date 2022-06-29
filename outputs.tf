@@ -13,11 +13,3 @@ output "integration" {
 output "invoke_policy" {
   value = local.has_iam_method_policies ? data.aws_iam_policy_document.invoke_policy[0].json : null
 }
-
-output "lambda" {
-  value = aws_lambda_function.lambda
-}
-
-output "lambda_role" {
-  value = aws_iam_role.lambda_role
-}
