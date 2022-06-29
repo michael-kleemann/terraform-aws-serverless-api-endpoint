@@ -12,12 +12,6 @@ variable "http_method" {
   }
 }
 
-variable "artifact_folder" {
-  type        = string
-  description = "The folder where the built binaries of your lambda reside."
-  default     = "./.artifacts"
-}
-
 variable "name" {
   type        = string
   description = "The name of your operation. This must match the name of the binary."
@@ -33,36 +27,6 @@ variable "suffix" {
   type        = string
   description = "Adds a suffix to the function name."
   default     = ""
-}
-
-variable "memory" {
-  type        = number
-  description = "The memory you wish to assign to the lambda function."
-  default     = 256
-}
-
-variable "timeout" {
-  type        = number
-  description = "The maximum amount of time (in seconds) your function is allowed to run."
-  default     = 3
-}
-
-variable "environment_vars" {
-  type        = map(string)
-  description = "Environment variables you want to set in the lambda environment."
-  default     = {}
-}
-
-variable "lambda_managed_policies" {
-  type        = set(string)
-  description = "A set of managed policies, referenced by arn, which will be attached to the created role of the lambda function."
-  default     = []
-}
-
-variable "lambda_policies" {
-  type        = list(string)
-  description = "A list of policy statements, in json, which will be set on the created role of the lambda function."
-  default     = []
 }
 
 variable "log_level" {
