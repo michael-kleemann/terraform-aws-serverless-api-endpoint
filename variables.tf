@@ -101,6 +101,6 @@ variable "resource" {
 }
 
 variable "function" {
-  type = any
+  type        = any
   description = "The function that is backing your configured endpoint."
 }
