@@ -99,3 +99,8 @@ variable "resource" {
     error_message = "You either have to reference the existing path or supply values for a new path."
   }
 }
+
+variable "function" {
+  type = any
+  description = "The function that is backing your configured endpoint."
+}
